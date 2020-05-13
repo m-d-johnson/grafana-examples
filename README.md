@@ -1,4 +1,4 @@
-# Grafanalilb Examples
+# Grafanalib Examples
 
 I'm starting to compile a collection of [grafanalib](https://github.com/weaveworks/grafanalib) examples.  
 
