@@ -10,12 +10,12 @@ dashboard = Dashboard(
     rows=[
         Row(panels=[
           GaugePanel(
-            title="My GaugePanel",
-            dataSource='My Prometheus',
+            title="Power Consumption",
+            dataSource='prometheus',
             targets=[
                 Target(
-                  expr='histogram_quantile(0.5, sum(irate(nginx_http_request_duration_seconds_bucket{job="default/frontend"}[1m])) by (le))',
-                  legendFormat="0.5 quantile",
+                  expr='_mqtt:instantaneous_power_house',
+                  legendFormat="Consumption Now",
                   refId='A',
                   ), 
                 ]
