@@ -18,7 +18,7 @@
       "panels": [
         {
           "cacheTimeout": null,
-          "datasource": "My Prometheus",
+          "datasource": "Prometheus",
           "description": null,
           "editable": true,
           "height": null,
@@ -65,12 +65,12 @@
           "targets": [
             {
               "datasource": "",
-              "expr": "histogram_quantile(0.5, sum(irate(nginx_http_request_duration_seconds_bucket{job=\"default/frontend\"}[1m])) by (le))",
+              "expr": "node_load5{instance=\"holly.kuub.org:9100\",job=\"prometheus\"}",
               "format": "time_series",
               "instant": false,
               "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "0.5 quantile",
+              "legendFormat": "",
               "metric": "",
               "refId": "A",
               "step": 10,
@@ -79,9 +79,174 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "My GaugePanel",
+          "title": "Load Gauge (Holly)",
           "transparent": false,
           "type": "gauge"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "Prometheus",
+          "description": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 2,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "sideWidth": null,
+            "sort": null,
+            "sortDesc": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": null,
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "seriesOverrides": [],
+          "span": 0,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "datasource": "",
+              "expr": "node_load5{instance=\"holly.kuub.org:9100\",job=\"prometheus\"}",
+              "format": "time_series",
+              "instant": false,
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "Load on {{instance}}",
+              "metric": "",
+              "refId": "A",
+              "step": 10,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "MyGraphPanel",
+          "tooltip": {
+            "msResolution": true,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "transparent": false,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "decimals": 2,
+              "format": null,
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "decimals": null,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            }
+          ]
+        },
+        {
+          "cacheTimeout": null,
+          "datasource": "Prometheus",
+          "description": null,
+          "editable": true,
+          "height": null,
+          "hideTimeOverride": false,
+          "id": 3,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "minSpan": null,
+          "options": {
+            "displayMode": "lcd",
+            "fieldOptions": {
+              "calcs": [
+                "mean"
+              ],
+              "defaults": {
+                "decimals": null,
+                "max": 100,
+                "min": 0,
+                "title": null,
+                "unit": "none"
+              },
+              "limit": null,
+              "mappings": [],
+              "override": {},
+              "thresholds": [
+                {
+                  "color": "green",
+                  "index": 0,
+                  "value": "null"
+                },
+                {
+                  "color": "red",
+                  "index": 1,
+                  "value": 80.0
+                }
+              ],
+              "values": false
+            },
+            "orientation": "horizontal",
+            "showThresholdLabels": false,
+            "showThresholdMarkers": true
+          },
+          "repeat": null,
+          "span": 6,
+          "targets": [
+            {
+              "datasource": "",
+              "expr": "node_load5{instance=\"holly.kuub.org:9100\",job=\"prometheus\"}",
+              "format": "time_series",
+              "instant": false,
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "Load on {{instance}}",
+              "metric": "",
+              "refId": "A",
+              "step": 10,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "My BarGaugePanel",
+          "transparent": false,
+          "type": "bargauge"
         }
       ],
       "repeat": null,
@@ -126,7 +291,7 @@
     ]
   },
   "timezone": "utc",
-  "title": "Frontend Stats",
+  "title": "My Home Dashboard",
   "uid": null,
   "version": 0
 }
