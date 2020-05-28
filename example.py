@@ -1,7 +1,22 @@
 from grafanalib.core import (
-    Alert, AlertCondition, BarGauge, Dashboard, Graph, GaugePanel,
-    GreaterThan, OP_AND, OPS_FORMAT, Row, RTYPE_SUM, SECONDS_FORMAT,
-    SHORT_FORMAT, single_y_axis, Target, TimeRange, YAxes, YAxis
+    Alert, 
+    AlertCondition, 
+    BarGauge, 
+    Dashboard, 
+    Graph, 
+    GaugePanel,
+    GreaterThan, 
+    OP_AND, 
+    OPS_FORMAT, 
+    Row, 
+    RTYPE_SUM, 
+    SECONDS_FORMAT,
+    SHORT_FORMAT, 
+    single_y_axis, 
+    Target, 
+    TimeRange, 
+    YAxes, 
+    YAxis
 )
 
 
@@ -10,7 +25,7 @@ dashboard = Dashboard(
     rows=[
         Row(panels=[
           GaugePanel(
-            title="Load Gauge (Holly)",
+            title="GaugePanel: Load Gauge (Holly)",
             dataSource='Prometheus',
             targets=[
                 Target(
@@ -20,7 +35,7 @@ dashboard = Dashboard(
                 ]
             ),
           Graph(
-            title="MyGraphPanel",
+            title="Graph: 5 min Load (Holly)",
             dataSource='Prometheus',
             targets=[
                 Target(
@@ -35,7 +50,7 @@ dashboard = Dashboard(
               ),
             ),
           BarGauge(
-            title="My BarGaugePanel",
+            title="BarGauge: 5 min Load (Holly)",
             dataSource="Prometheus",
               targets=[
                 Target(

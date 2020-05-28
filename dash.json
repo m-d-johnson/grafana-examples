@@ -79,7 +79,7 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Load Gauge (Holly)",
+          "title": "GaugePanel: Load Gauge (Holly)",
           "transparent": false,
           "type": "gauge"
         },
@@ -146,7 +146,7 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "MyGraphPanel",
+          "title": "Graph: 5 min Load (Holly)",
           "tooltip": {
             "msResolution": true,
             "shared": true,
@@ -244,7 +244,7 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "My BarGaugePanel",
+          "title": "BarGauge: 5 min Load (Holly)",
           "transparent": false,
           "type": "bargauge"
         }
