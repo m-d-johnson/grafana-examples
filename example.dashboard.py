@@ -10,7 +10,7 @@ dashboard = Dashboard(
     rows=[
         Row(panels=[
           Graph(
-              title="Frontend QPS",
+            title="Frontend QPS",
             dataSource='My Prometheus',
             targets=[
                 Target(
